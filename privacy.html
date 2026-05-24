@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Clip for Google Tasks</title>
+    <meta
+      name="description"
+      content="How the Clip for Google Tasks Chrome extension handles your data."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <a class="brand" href="./">
+          <span class="brand-mark">C</span>
+          <span>Clip for Google Tasks</span>
+        </a>
+        <nav class="site-nav">
+          <a href="./">Home</a>
+          <a href="privacy.html" class="active">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </header>
+
+      <h1>Privacy Policy</h1>
+      <p class="meta">
+        <strong>Last updated:</strong> 24 May 2026 · <strong>Effective date:</strong> 24 May 2026
+      </p>
+
+      <p>
+        This privacy policy describes how the browser extension <strong>Clip for Google
+        Tasks</strong> ("the Extension", "we", "us") handles data when you use it. The
+        Extension is published by <strong>ozeo</strong> (Jean-Sébastien Mancebo), 14
+        avenue de l'Europe, 77144 Montévrain, France. Contact:
+        <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
+      </p>
+
+      <p>
+        The Extension is a third-party tool. It is not affiliated with, endorsed by, or
+        sponsored by Google LLC. Google Tasks™ is a trademark of Google LLC.
+      </p>
+
+      <h2>1. What the Extension does</h2>
+      <p>
+        The Extension lets you select text on any web page and send it to your Google
+        Tasks account as a new task, with a "scroll-to-text" deep link pointing back to
+        the exact passage on the original page.
+      </p>
+
+      <h2>2. What data the Extension accesses</h2>
+      <p>
+        The Extension only accesses data <strong>at the moment you explicitly trigger
+        it</strong> by right-clicking selected text and choosing "Clip to Google Tasks".
+        At that moment, it reads:
+      </p>
+      <ul>
+        <li>The text you selected</li>
+        <li>The URL of the current page</li>
+        <li>The title of the current page</li>
+      </ul>
+      <p>
+        This data is used <strong>exclusively</strong> to build a Google Tasks task on
+        your behalf, in your own Google Tasks account.
+      </p>
+      <p>The Extension does <strong>not</strong>:</p>
+      <ul>
+        <li>Read the content of pages you visit when you do not invoke it</li>
+        <li>Track your browsing history</li>
+        <li>Send any data to ozeo or to any third party other than Google Tasks API</li>
+        <li>Use analytics, cookies, advertising trackers, or fingerprinting</li>
+        <li>Sell, rent, or share data with anyone</li>
+      </ul>
+
+      <h2>3. Data sent to Google</h2>
+      <p>
+        When you click "Clip", the task data (title, notes, optional due date, list
+        selection) is sent directly from your browser to the <strong>Google Tasks
+        API</strong> (<code>googleapis.com</code>), using an OAuth access token granted
+        by you. The data ends up in <strong>your own Google Tasks account</strong>,
+        governed by
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+      </p>
+      <p>ozeo never sees this data and has no access to it.</p>
+
+      <h2>4. Data stored locally</h2>
+      <p>
+        The Extension stores the following in your browser's
+        <code>chrome.storage.sync</code> area (synchronised across your Chrome
+        installations via your Google account, by Chrome):
+      </p>
+      <ul>
+        <li>Your default Google Tasks list (if set in the Options page)</li>
+        <li>Your default due-date offset (if set in the Options page)</li>
+      </ul>
+      <p>This data stays inside your Google account and is never transmitted to ozeo.</p>
+      <p>
+        The Extension also caches an OAuth access token (managed by Chrome's identity
+        API) for the duration of a session. You can revoke this token at any time from
+        your
+        <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>
+        or from the Extension's Options page.
+      </p>
+
+      <h2>5. Future paid features</h2>
+      <p>
+        We may, in the future, offer optional paid features (the "Paid Plan"). The Paid
+        Plan will be <strong>opt-in</strong>: you are never required to subscribe to use
+        the free version of the Extension described above.
+      </p>
+      <p>If and when you choose to subscribe to a Paid Plan:</p>
+      <ul>
+        <li>
+          You will be asked to create an account on <strong>clip.ozeo.io</strong> using
+          "Sign in with Google", which will share with us your <strong>email
+          address</strong> and <strong>basic profile information</strong> (name, profile
+          picture) — and nothing else from your Google account.
+        </li>
+        <li>
+          Payment processing will be handled by <strong>Stripe</strong>. We will not see
+          or store your full payment card details. Stripe will store the billing
+          information necessary to process recurring payments, governed by
+          <a href="https://stripe.com/privacy">Stripe's privacy policy</a>.
+        </li>
+        <li>
+          We will store: your email, your subscription status, your aggregated usage
+          counters (e.g. number of clips this month) for quota enforcement. This data
+          lives in our own AWS-hosted database, in the EU region.
+        </li>
+        <li>
+          Any premium features that involve server-side processing (such as automatic
+          enrichment of clipped data) will be described and explicitly opted into before
+          any data is sent to our servers.
+        </li>
+      </ul>
+      <p>
+        These future features are <strong>not active at the time of this policy's
+        publication</strong>. When they become active, this policy will be updated and
+        the "Last updated" date above will reflect the change.
+      </p>
+
+      <h2>6. Permissions, justified</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>contextMenus</code></td>
+            <td>To add the "Clip to Google Tasks" item to the right-click menu</td>
+          </tr>
+          <tr>
+            <td><code>identity</code></td>
+            <td>To obtain an OAuth token to call the Google Tasks API on your behalf</td>
+          </tr>
+          <tr>
+            <td><code>storage</code></td>
+            <td>To remember your default list and due-date offset preferences</td>
+          </tr>
+          <tr>
+            <td><code>https://www.googleapis.com/*</code></td>
+            <td>To call the Google Tasks API</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        OAuth scope requested: <code>https://www.googleapis.com/auth/tasks</code>. This
+        is the minimum scope required to create tasks in your Google Tasks account.
+      </p>
+
+      <h2>7. Data retention</h2>
+      <p>
+        ozeo retains <strong>no data</strong> related to your use of the free version of
+        the Extension, because no data ever reaches our systems. All data lives in your
+        own Google account.
+      </p>
+      <p>
+        For the (future) Paid Plan, we will retain your account data for as long as your
+        subscription is active, plus the legally required retention period after
+        termination (typically up to 10 years for billing records under French tax law).
+        You can request deletion of your account at any time; non-mandatory data is then
+        erased within 30 days.
+      </p>
+
+      <h2>8. Your rights under GDPR (RGPD)</h2>
+      <p>
+        As a user located in the European Union or the European Economic Area, you have
+        the right to:
+      </p>
+      <ul>
+        <li>Access the data we hold about you</li>
+        <li>Rectify inaccurate data</li>
+        <li>Request erasure</li>
+        <li>Restrict or object to processing</li>
+        <li>Data portability</li>
+        <li>
+          Lodge a complaint with a data protection authority (in France:
+          <a href="https://www.cnil.fr">CNIL</a>)
+        </li>
+      </ul>
+      <p>
+        <strong>For the free Extension:</strong> because we do not store your data,
+        these rights are exercised directly with Google. You can manage your Google
+        Tasks data, revoke the Extension's access, and export or delete your tasks from
+        your <a href="https://myaccount.google.com/">Google Account</a>.
+      </p>
+      <p>
+        <strong>For the (future) Paid Plan:</strong> these rights are exercised by
+        contacting us at <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
+      </p>
+
+      <h2>9. Children</h2>
+      <p>
+        The Extension is not directed at children under 16 and does not knowingly collect
+        data from them.
+      </p>
+
+      <h2>10. Changes to this policy</h2>
+      <p>
+        We may update this policy from time to time. Material changes will be
+        communicated through the Extension's listing on the Chrome Web Store and via this
+        page. The "Last updated" date at the top reflects the most recent change.
+      </p>
+
+      <h2>11. Compliance with Google API Services User Data Policy</h2>
+      <p>
+        Clip for Google Tasks's use and transfer to any other app of information received
+        from Google APIs will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy"
+          >Google API Services User Data Policy</a
+        >, including the Limited Use requirements.
+      </p>
+
+      <h2>12. Contact</h2>
+      <p>
+        ozeo — 14 avenue de l'Europe, 77144 Montévrain, France<br />
+        Email: <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>
+      </p>
+      <p>
+        For data protection questions, contact:
+        <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
+      </p>
+
+      <footer class="site-footer">
+        <div>© 2026 ozeo · 14 avenue de l'Europe, 77144 Montévrain, France</div>
+        <div>
+          <a href="./">Home</a> · <a href="terms.html">Terms</a> ·
+          <a href="mailto:contact@ozeo.io">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
