@@ -2,8 +2,20 @@
 
 Public-facing static site for the **Clip for Google Tasks** Chrome extension.
 
-Hosted via GitHub Pages at:
-<https://jsozeo.github.io/clip-for-google-tasks-website/>
+Hosted via GitHub Pages, served from the custom domain:
+<https://clip.ozeo.io/>
+
+(Default Pages URL fallback: <https://jsozeo.github.io/clip-for-google-tasks-website/>)
+
+The custom domain is configured via:
+
+- A `CNAME` file at the repo root containing `clip.ozeo.io`
+- A DNS `CNAME` record `clip.ozeo.io → jsozeo.github.io` at the `ozeo.io` registrar
+- `Settings → Pages → Custom domain` set to `clip.ozeo.io` with `Enforce HTTPS` enabled
+
+The domain `ozeo.io` is verified in Google Search Console (Domain property,
+TXT record), which lets it be used as the OAuth consent screen homepage / privacy /
+terms URL in Google Cloud Console.
 
 ## Pages
 
