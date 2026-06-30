@@ -87,8 +87,9 @@
           <strong>The email address of the Google account you authorize</strong> — read
           once from your OAuth token. It is used <strong>only</strong> to build correct
           <code>?authuser=</code> deep links so that links to your tasks open in the right
-          Google account when you use multiple accounts. It is never used for tracking,
-          profiling, or advertising.
+          Google account when you use multiple accounts. The email address itself is never
+          transmitted to ozeo; only its coarse domain may appear in anonymous analytics
+          (see section 4). It is never used for advertising.
         </li>
       </ul>
 
@@ -125,17 +126,47 @@
 
       <h2>4. How we share this data (Data Sharing)</h2>
       <p>
-        The <strong>only</strong> recipient of your Google user data is
-        <strong>Google's own Google Tasks API</strong>
-        (<code>googleapis.com</code>). The data stays in <strong>your own Google Tasks
+        The <strong>only</strong> recipient of your Google user data (your task lists,
+        your tasks, and their content) is <strong>Google's own Google Tasks API</strong>
+        (<code>googleapis.com</code>). That data stays in <strong>your own Google Tasks
         account</strong>, governed by
-        <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>. It is
+        <strong>never</strong> sent to ozeo, and ozeo never sells, rents, or shares it
+        with any third party.
       </p>
       <p>
-        <strong>ozeo does not receive, store, see, sell, rent, or share any of your Google
-        user data with any third party.</strong> This version of the Extension contains
-        <strong>no analytics, no advertising, no third-party trackers, and no
-        cookies</strong>. Your Google Tasks data never reaches ozeo's servers.
+        To understand how the Extension is used and to improve it, ozeo collects
+        <strong>anonymous, opt-out usage analytics</strong> on its own server (an
+        AWS-hosted endpoint in the EU — not a third-party analytics provider). Each event
+        contains only:
+      </p>
+      <ul>
+        <li>
+          a <strong>random install identifier</strong> generated locally on your device
+          (not tied to your name, email, or Google account);
+        </li>
+        <li>
+          the <strong>event name</strong> (e.g. <code>clip_created</code>,
+          <code>dashboard_opened</code>) and the extension version;
+        </li>
+        <li>
+          a <strong>coarse site category</strong> for clips (e.g.
+          <code>jira_confluence</code>, <code>gmail</code>, <code>other</code>) — never the
+          actual URL, page title, or the text you selected;
+        </li>
+        <li>
+          the <strong>coarse domain</strong> of your account email (e.g.
+          <code>gmail.com</code>, <code>company.com</code>), used only to distinguish
+          personal from organizational usage. The email address itself is
+          <strong>never</strong> transmitted.
+        </li>
+      </ul>
+      <p>
+        These analytics never include your tasks, notes, labels, full URLs, page content,
+        or your email address. They involve <strong>no advertising, no third-party
+        trackers, and no cookies</strong>. You can turn them off at any time from the
+        Extension's <strong>Options</strong> page ("Help improve Clip by sharing anonymous
+        usage stats").
       </p>
 
       <h2>5. How we store and protect this data (Data Storage &amp; Protection)</h2>
