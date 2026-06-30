@@ -6,7 +6,7 @@
     <title>Privacy Policy — Clip for Google Tasks</title>
     <meta
       name="description"
-      content="How the Clip for Google Tasks Chrome extension handles your data."
+      content="How the Clip for Google Tasks Chrome extension accesses, uses, stores, and shares Google user data."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -26,14 +26,15 @@
 
       <h1>Privacy Policy</h1>
       <p class="meta">
-        <strong>Last updated:</strong> 24 May 2026 · <strong>Effective date:</strong> 24 May 2026
+        <strong>Last updated:</strong> 21 June 2026 · <strong>Effective date:</strong> 21 June 2026
       </p>
 
       <p>
         This privacy policy describes how the browser extension <strong>Clip for Google
-        Tasks</strong> ("the Extension", "we", "us") handles data when you use it. The
-        Extension is published by <strong>ozeo</strong> (Jean-Sébastien Mancebo), 14
-        avenue de l'Europe, 77144 Montévrain, France. Contact:
+        Tasks</strong> ("the Extension", "we", "us") accesses, uses, stores, and shares
+        data — including Google user data — when you use it. The Extension is published by
+        <strong>ozeo</strong> (Jean-Sébastien Mancebo), 14 avenue de l'Europe, 77144
+        Montévrain, France. Contact:
         <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
       </p>
 
@@ -44,66 +45,197 @@
 
       <h2>1. What the Extension does</h2>
       <p>
-        The Extension lets you select text on any web page and send it to your Google
-        Tasks account as a new task, with a "scroll-to-text" deep link pointing back to
-        the exact passage on the original page.
-      </p>
-
-      <h2>2. What data the Extension accesses</h2>
-      <p>
-        The Extension only accesses data <strong>at the moment you explicitly trigger
-        it</strong> by right-clicking selected text and choosing "Clip to Google Tasks".
-        At that moment, it reads:
+        Clip for Google Tasks is a client for <strong>Google Tasks</strong>. It lets you:
       </p>
       <ul>
-        <li>The text you selected</li>
-        <li>The URL of the current page</li>
-        <li>The title of the current page</li>
+        <li>
+          Select text on any web page and send it to your Google Tasks account as a new
+          task, with a "scroll-to-text" deep link pointing back to the exact passage on
+          the original page.
+        </li>
+        <li>
+          View, search, edit, and mark complete your existing Google Tasks from the
+          Extension's popup and side panel, without leaving the page you are on.
+        </li>
       </ul>
       <p>
-        This data is used <strong>exclusively</strong> to build a Google Tasks task on
-        your behalf, in your own Google Tasks account.
+        Everything the Extension does happens directly between your browser and Google,
+        using an OAuth access token you grant. The Extension is operated entirely on your
+        device.
       </p>
-      <p>The Extension does <strong>not</strong>:</p>
+
+      <h2>2. Google user data we access</h2>
+      <p>
+        With your authorization, the Extension uses the Google Tasks API
+        (<code>https://www.googleapis.com/auth/tasks</code>) to access the following
+        Google user data:
+      </p>
       <ul>
-        <li>Read the content of pages you visit when you do not invoke it</li>
-        <li>Track your browsing history</li>
-        <li>Send any data to ozeo or to any third party other than Google Tasks API</li>
-        <li>Use analytics, cookies, advertising trackers, or fingerprinting</li>
-        <li>Sell, rent, or share data with anyone</li>
+        <li>
+          <strong>Your task lists</strong> — their names and identifiers, so the Extension
+          can show them and let you choose where a task goes.
+        </li>
+        <li>
+          <strong>Your tasks</strong> — their title, notes, due date, status, and
+          completion date, so the Extension can display and manage them.
+        </li>
+        <li>
+          <strong>Create, edit, and complete</strong> permissions — to create new tasks
+          and to update or mark complete tasks you choose to change.
+        </li>
+        <li>
+          <strong>The email address of the Google account you authorize</strong> — read
+          once from your OAuth token. It is used <strong>only</strong> to build correct
+          <code>?authuser=</code> deep links so that links to your tasks open in the right
+          Google account when you use multiple accounts. It is never used for tracking,
+          profiling, or advertising.
+        </li>
       </ul>
 
-      <h2>3. Data sent to Google</h2>
+      <h2>3. How we use this data (Data Usage)</h2>
+      <ul>
+        <li>
+          <strong>Reading your tasks</strong> is used to display them in the Extension's
+          popup and side panel so you can view, search, and manage them.
+        </li>
+        <li>
+          <strong>Text you select plus the current page's URL and title</strong> are used
+          to create a new Google Tasks task with a scroll-to-text deep link back to the
+          source.
+        </li>
+        <li>
+          <strong>Edits and completions you make</strong> in the side panel are written
+          back to your Google Tasks account.
+        </li>
+        <li>
+          <strong>Labels</strong> are stored inline inside each task's own
+          <em>notes</em> field (inside your Google account, via a small marker line) so the
+          Extension can render colored tags. No separate label store leaves your account.
+        </li>
+        <li>
+          <strong>Your account email</strong> is used solely to construct correct
+          multi-account deep links, as described above.
+        </li>
+      </ul>
       <p>
-        When you click "Clip", the task data (title, notes, optional due date, list
-        selection) is sent directly from your browser to the <strong>Google Tasks
-        API</strong> (<code>googleapis.com</code>), using an OAuth access token granted
-        by you. The data ends up in <strong>your own Google Tasks account</strong>,
-        governed by
+        The Extension does <strong>not</strong> read the content of pages you visit unless
+        you explicitly invoke it (by clipping a selection or using an on-page action), and
+        it does not track your browsing history.
+      </p>
+
+      <h2>4. How we share this data (Data Sharing)</h2>
+      <p>
+        The <strong>only</strong> recipient of your Google user data is
+        <strong>Google's own Google Tasks API</strong>
+        (<code>googleapis.com</code>). The data stays in <strong>your own Google Tasks
+        account</strong>, governed by
         <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
       </p>
-      <p>ozeo never sees this data and has no access to it.</p>
-
-      <h2>4. Data stored locally</h2>
       <p>
-        The Extension stores the following in your browser's
-        <code>chrome.storage.sync</code> area (synchronised across your Chrome
-        installations via your Google account, by Chrome):
+        <strong>ozeo does not receive, store, see, sell, rent, or share any of your Google
+        user data with any third party.</strong> This version of the Extension contains
+        <strong>no analytics, no advertising, no third-party trackers, and no
+        cookies</strong>. Your Google Tasks data never reaches ozeo's servers.
       </p>
+
+      <h2>5. How we store and protect this data (Data Storage &amp; Protection)</h2>
       <ul>
-        <li>Your default Google Tasks list (if set in the Options page)</li>
-        <li>Your default due-date offset (if set in the Options page)</li>
+        <li>
+          <strong>Your tasks</strong> live on Google's servers, inside your own Google
+          account, under Google's privacy policy. The Extension does not keep its own copy
+          on any server.
+        </li>
+        <li>
+          <strong>On your device only</strong>, the Extension keeps small caches via
+          Chrome's <code>storage</code> API:
+          <ul>
+            <li>
+              Your preferences (default task list, default due-date offset) and your label
+              colors, in <code>chrome.storage.sync</code> — synchronized across your own
+              Chrome installations by Chrome, via your Google account.
+            </li>
+            <li>
+              The resolved account email, in <code>chrome.storage.local</code>, used to
+              build the deep links described in section 2.
+            </li>
+            <li>
+              An OAuth access token, managed by Chrome's <code>identity</code> API, for the
+              duration of a session.
+            </li>
+          </ul>
+        </li>
+        <li>
+          All communication with Google APIs uses <strong>HTTPS</strong>. We request the
+          minimum scope necessary (see section 6) and we hold no server-side copy of your
+          data.
+        </li>
+        <li>
+          You can revoke the Extension's access at any time from your
+          <a href="https://myaccount.google.com/permissions">Google Account permissions
+          page</a>. Uninstalling the Extension removes all of its local caches from your
+          device.
+        </li>
       </ul>
-      <p>This data stays inside your Google account and is never transmitted to ozeo.</p>
+
+      <h2>6. Requesting minimum scopes</h2>
       <p>
-        The Extension also caches an OAuth access token (managed by Chrome's identity
-        API) for the duration of a session. You can revoke this token at any time from
-        your
-        <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>
-        or from the Extension's Options page.
+        OAuth scope requested: <code>https://www.googleapis.com/auth/tasks</code>. This is
+        the minimum scope required for the Extension's core functions, because it both
+        <strong>creates</strong> tasks (from web clips) and lets you <strong>view, edit,
+        and complete</strong> your existing tasks in the side panel. A read-only Tasks
+        scope would not allow creating, editing, or completing tasks, and Google offers no
+        narrower "create-only" Tasks scope. The Extension requests <strong>no other Google
+        API scopes</strong>.
       </p>
 
-      <h2>5. Future paid features</h2>
+      <h2>7. Browser permissions, justified</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>contextMenus</code></td>
+            <td>To add the "Clip to Google Tasks" item to the right-click menu</td>
+          </tr>
+          <tr>
+            <td><code>identity</code></td>
+            <td>To obtain an OAuth token to call the Google Tasks API on your behalf</td>
+          </tr>
+          <tr>
+            <td><code>storage</code></td>
+            <td>To remember your preferences and label colors locally</td>
+          </tr>
+          <tr>
+            <td><code>activeTab</code>, <code>scripting</code></td>
+            <td>
+              To read the current page's title/URL (and, on your explicit action, build a
+              link) only when you invoke the Extension on that tab
+            </td>
+          </tr>
+          <tr>
+            <td><code>sidePanel</code></td>
+            <td>To show your tasks in Chrome's side panel</td>
+          </tr>
+          <tr>
+            <td><code>https://www.googleapis.com/*</code></td>
+            <td>To call the Google Tasks API</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>8. Data retention</h2>
+      <p>
+        ozeo retains <strong>no data</strong> related to your use of the Extension, because
+        none of your data ever reaches our systems. All of your task data lives in your own
+        Google account and is retained by Google under your control. Local caches on your
+        device persist until you clear them or uninstall the Extension.
+      </p>
+
+      <h2>9. Future paid features</h2>
       <p>
         We may, in the future, offer optional paid features (the "Paid Plan"). The Paid
         Plan will be <strong>opt-in</strong>: you are never required to subscribe to use
@@ -124,109 +256,54 @@
           <a href="https://stripe.com/privacy">Stripe's privacy policy</a>.
         </li>
         <li>
-          We will store: your email, your subscription status, your aggregated usage
+          We will store: your email, your subscription status, and aggregated usage
           counters (e.g. number of clips this month) for quota enforcement. This data
           lives in our own AWS-hosted database, in the EU region.
         </li>
         <li>
-          Any premium features that involve server-side processing (such as automatic
-          enrichment of clipped data) will be described and explicitly opted into before
-          any data is sent to our servers.
+          Any premium feature that involves server-side processing will be described and
+          explicitly opted into before any data is sent to our servers, and this policy
+          will be updated accordingly before it launches.
         </li>
       </ul>
       <p>
         These future features are <strong>not active at the time of this policy's
-        publication</strong>. When they become active, this policy will be updated and
-        the "Last updated" date above will reflect the change.
+        publication</strong>. When they become active, this policy will be updated and the
+        "Last updated" date above will reflect the change.
       </p>
 
-      <h2>6. Permissions, justified</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Permission</th>
-            <th>Why</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>contextMenus</code></td>
-            <td>To add the "Clip to Google Tasks" item to the right-click menu</td>
-          </tr>
-          <tr>
-            <td><code>identity</code></td>
-            <td>To obtain an OAuth token to call the Google Tasks API on your behalf</td>
-          </tr>
-          <tr>
-            <td><code>storage</code></td>
-            <td>To remember your default list and due-date offset preferences</td>
-          </tr>
-          <tr>
-            <td><code>https://www.googleapis.com/*</code></td>
-            <td>To call the Google Tasks API</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>10. Your rights under GDPR (RGPD)</h2>
       <p>
-        OAuth scope requested: <code>https://www.googleapis.com/auth/tasks</code>. This
-        is the minimum scope required to create tasks in your Google Tasks account.
-      </p>
-
-      <h2>7. Data retention</h2>
-      <p>
-        ozeo retains <strong>no data</strong> related to your use of the free version of
-        the Extension, because no data ever reaches our systems. All data lives in your
-        own Google account.
+        As a user located in the European Union or the European Economic Area, you have the
+        right to access, rectify, erase, restrict or object to processing of your data,
+        data portability, and to lodge a complaint with a data protection authority (in
+        France: <a href="https://www.cnil.fr">CNIL</a>).
       </p>
       <p>
-        For the (future) Paid Plan, we will retain your account data for as long as your
-        subscription is active, plus the legally required retention period after
-        termination (typically up to 10 years for billing records under French tax law).
-        You can request deletion of your account at any time; non-mandatory data is then
-        erased within 30 days.
-      </p>
-
-      <h2>8. Your rights under GDPR (RGPD)</h2>
-      <p>
-        As a user located in the European Union or the European Economic Area, you have
-        the right to:
-      </p>
-      <ul>
-        <li>Access the data we hold about you</li>
-        <li>Rectify inaccurate data</li>
-        <li>Request erasure</li>
-        <li>Restrict or object to processing</li>
-        <li>Data portability</li>
-        <li>
-          Lodge a complaint with a data protection authority (in France:
-          <a href="https://www.cnil.fr">CNIL</a>)
-        </li>
-      </ul>
-      <p>
-        <strong>For the free Extension:</strong> because we do not store your data,
-        these rights are exercised directly with Google. You can manage your Google
-        Tasks data, revoke the Extension's access, and export or delete your tasks from
-        your <a href="https://myaccount.google.com/">Google Account</a>.
+        <strong>For the free Extension:</strong> because we do not store your data, these
+        rights are exercised directly with Google. You can manage your Google Tasks data,
+        revoke the Extension's access, and export or delete your tasks from your
+        <a href="https://myaccount.google.com/">Google Account</a>.
       </p>
       <p>
         <strong>For the (future) Paid Plan:</strong> these rights are exercised by
         contacting us at <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
       </p>
 
-      <h2>9. Children</h2>
+      <h2>11. Children</h2>
       <p>
         The Extension is not directed at children under 16 and does not knowingly collect
         data from them.
       </p>
 
-      <h2>10. Changes to this policy</h2>
+      <h2>12. Changes to this policy</h2>
       <p>
-        We may update this policy from time to time. Material changes will be
-        communicated through the Extension's listing on the Chrome Web Store and via this
-        page. The "Last updated" date at the top reflects the most recent change.
+        We may update this policy from time to time. Material changes will be communicated
+        through the Extension's listing on the Chrome Web Store and via this page. The
+        "Last updated" date at the top reflects the most recent change.
       </p>
 
-      <h2>11. Compliance with Google API Services User Data Policy</h2>
+      <h2>13. Compliance with Google API Services User Data Policy</h2>
       <p>
         Clip for Google Tasks's use and transfer to any other app of information received
         from Google APIs will adhere to the
@@ -235,14 +312,10 @@
         >, including the Limited Use requirements.
       </p>
 
-      <h2>12. Contact</h2>
+      <h2>14. Contact</h2>
       <p>
         ozeo — 14 avenue de l'Europe, 77144 Montévrain, France<br />
         Email: <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>
-      </p>
-      <p>
-        For data protection questions, contact:
-        <a href="mailto:contact@ozeo.io">contact@ozeo.io</a>.
       </p>
 
       <footer class="site-footer">
